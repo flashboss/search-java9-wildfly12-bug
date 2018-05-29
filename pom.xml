@@ -10,32 +10,6 @@
 	<properties>
 		<maven.compiler.source>9</maven.compiler.source>
 		<maven.compiler.target>9</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jboss.home>${env.JBOSS_HOME}</jboss.home>
-		<version.jboss.spec.javaee.7.0>1.1.1.Final</version.jboss.spec.javaee.7.0>
-		<richfaces.version>4.5.17.Final</richfaces.version>
-		<org.jboss.arquillian.version>1.4.0.Final</org.jboss.arquillian.version>
-		<org.jboss.arquillian.drone.version>2.5.1</org.jboss.arquillian.drone.version>
-		<version.selenium>3.11.0</version.selenium>
-		<commons.lang.version>2.6</commons.lang.version>
-		<commons.jexl.version>2.1.1</commons.jexl.version>
-		<guava.version>21.0</guava.version>
-		<junit.version>4.12</junit.version>
-		<maven.gpg.plugin.version>2.10.3</maven.gpg.plugin.version>
-		<maven.javadoc.plugin.version>1.6</maven.javadoc.plugin.version>
-		<maven.source.plugin.version>2.4</maven.source.plugin.version>
-		<ejb.version>3.2</ejb.version>
-		<maven.replacer.plugin.version>1.5.3</maven.replacer.plugin.version>
-		<wildfly.version>12.0.0.Final</wildfly.version>
-		<wildfly.maven.plugin.version>1.2.2.Final-SNAPSHOT</wildfly.maven.plugin.version>
-		<picketlink.version>2.5.5.SP9</picketlink.version>
-		<picketbox.version>5.0.2.Final</picketbox.version>
-		<picketbox.commons.version>1.0.0.final</picketbox.commons.version>
-		<lucene.version>5.3.1</lucene.version>
-		<hibernate.version>5.1.10.Final</hibernate.version>
-		<hibernate.search.version>5.5.8.Final</hibernate.search.version>
-		<xml.api.version>1.4.01</xml.api.version>
-		<rome.version>1.5.0</rome.version>
 	</properties>
 
 	<profiles>
@@ -52,7 +26,7 @@
 								<id>run-wildfly</id>
 								<phase>install</phase>
 								<goals>
-									<goal>run</goal>
+									<goal>deploy</goal>
 								</goals>
 								<configuration>
 									<version>12.0.0.Final</version>
@@ -65,4 +39,14 @@
 			</build>
 		</profile>
 	</profiles>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-7.0</artifactId>
+			<version>1.1.1.Final</version>
+			<type>pom</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 </project>
